@@ -49,11 +49,10 @@
                 <td>
                     <p-tableCheckbox [value]="item"></p-tableCheckbox>
                 </td>
-                <td>{{ item.name }}</td>
-                <td><img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + item.image"
-                        [alt]="item.name" width="50" class="shadow-4" /></td>
-                <td>{{ item.price | currency: 'USD' }}</td>
-                <td>{{ item.category }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.apellidopaterno }}</td>
+                <td>{{ item.apellidomaterno }}</td>
+                <td>{{ item.email }}</td>
                 <td>
                     <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                         (click)="showUpdate(item)"></button>

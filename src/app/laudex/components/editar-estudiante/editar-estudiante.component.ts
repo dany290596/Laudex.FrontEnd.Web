@@ -40,8 +40,17 @@ export class EditarEstudianteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.srvStudent.getById(this.data.data.id).subscribe((s: any) => {
+    console.log("DATA ::: ", this.data);
+    this.srvStudent.getById(this.data.data).subscribe((s: any) => {
       console.log("RESPONSE ::: ", s);
+      if (s.estatus === true) {
+        this.guardarFG = this.formBuilder.group({
+          nombre: [s.estudiante.nombre, [Validators.required]],
+          apellidopaterno: [s.estudiante.apellidopaterno, [Validators.required]],
+          apellidomaterno: [s.estudiante.apellidomaterno, [Validators.required]],
+          email: [s.estudiante.email, [Validators.required, Validators.pattern(this.emailPattern)]]
+        });
+      }
     });
   }
 
@@ -59,8 +68,11 @@ export class EditarEstudianteComponent implements OnInit {
 
       console.log("PARAMS ::: ", params);
 
-      this.srvStudent.update(this.data.data.id, params).subscribe((s: any) => {
+      this.srvStudent.update(this.data.data, params).subscribe((s: any) => {
         console.log("RESPONSE ::: ", s);
+        if (s.estatus === true) {
+          this.ref.close();
+        }
       });
     }
   }

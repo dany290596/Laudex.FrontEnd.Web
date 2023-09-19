@@ -24,7 +24,15 @@ export class EstudianteComponent implements OnInit {
   ngOnInit(): void {
     this.srvStudent.getAll().subscribe((s: any) => {
       console.log("GET ALL ::: ", s);
-      this.dataStudent = s;
+      this.dataStudent = s.map((m: any) => {
+        return {
+          id: m.id,
+          nombre: m.nombre,
+          apellidopaterno: m.apellidopaterno,
+          apellidomaterno: m.apellidomaterno,
+          email: m.email
+        } as any;
+      });
     });
   }
 
@@ -33,6 +41,10 @@ export class EstudianteComponent implements OnInit {
     this.selectedProducts.forEach((e: any) => {
       this.srvStudent.delete(e.id).subscribe((s: any) => {
         console.log("RESPONSE ::: ", s);
+        if (s.estatus === true) {
+          this.ngOnInit();
+        } else {
+        }
       });
     });
   }
@@ -59,6 +71,7 @@ export class EstudianteComponent implements OnInit {
       //     this.mapearFiltros.emit(value);
       //   }
       // }
+      this.ngOnInit();
     });
   }
 
@@ -85,13 +98,18 @@ export class EstudianteComponent implements OnInit {
       //     this.mapearFiltros.emit(value);
       //   }
       // }
+      this.ngOnInit();
     });
   }
 
   showDelete(e: any) {
     console.log("EVENT ::: ", e.id);
     this.srvStudent.delete(e.id).subscribe((s: any) => {
-      console.log("RESPONSE ::: ", s);
+      if (s.estatus === true) {
+        console.log("RESPONSE ::: ", s);
+        this.ngOnInit();
+      } else {
+      }
     });
   }
 }

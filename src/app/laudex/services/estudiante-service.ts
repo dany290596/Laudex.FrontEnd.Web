@@ -16,7 +16,7 @@ export class EstudianteService {
     private url: string = `${environment.api}`;
 
     create(request: any) {
-        return this.http.post(`${this.url}Colaborador/Create`, request, {
+        return this.http.post(`${this.url}create`, request, {
             headers: new HttpHeaders(
                 {
                     'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export class EstudianteService {
     }
 
     update(id: string, request: any) {
-        return this.http.put(`${this.url}Colaborador/Update/${id}`, request, {
+        return this.http.put(`${this.url}updateById?id=${id}`, request, {
             headers: new HttpHeaders(
                 {
                     'Content-Type': 'application/json',
@@ -48,7 +48,18 @@ export class EstudianteService {
     }
 
     getAll() {
-        var response = this.http.get<any[]>("../../assets/estudiantes/estudiantes.json");
+        var response = this.http.get<any[]>(`${this.url}getAll`).pipe(
+            map(res => {
+                console.log(res);
+                return res
+            }),
+            catchError(async (err) => {
+
+                const error = err.error?.msg || err.statusText;
+                console.error("ERROR ::: ", err);
+                return throwError(() => error);
+            })
+        );
         return response;
     }
 
@@ -59,7 +70,7 @@ export class EstudianteService {
             }),
         };
 
-        return this.http.get(`${this.url}Colaborador/GetColaboradores/${id}`, opciones).pipe(
+        return this.http.get(`${this.url}getById?id=${id}`, opciones).pipe(
             map(res => {
                 console.log(res);
                 return res
@@ -80,7 +91,7 @@ export class EstudianteService {
             }),
         };
 
-        return this.http.delete(`${this.url}Colaborador/GetColaboradores/${id}`, opciones).pipe(
+        return this.http.delete(`${this.url}deleteById/${id}`, opciones).pipe(
             map(res => {
                 console.log(res);
                 return res

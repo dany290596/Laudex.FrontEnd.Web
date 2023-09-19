@@ -1,5 +1,6 @@
 <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="guardarFG" class="contenido-form">
     <div class="row animate__animated animate__fadeInUp">
+        <br>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3" style="margin-bottom: 25px;">
             <span class="p-float-label">
                 <input class="inputss" type="text" pInputText formControlName="nombre">
@@ -55,10 +56,10 @@
 
     <div class="row animate__animated animate__fadeInUp">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-        <p-messages [enableService]="true" [closable]="true"></p-messages>
-        <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+            <p-messages [enableService]="true" [closable]="true"></p-messages>
+            <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+        </div>
     </div>
-            </div>
 
     <div class="row">
         <div class="col-5 my-2">

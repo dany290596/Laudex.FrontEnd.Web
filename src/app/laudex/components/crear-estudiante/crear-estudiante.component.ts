@@ -53,6 +53,18 @@ export class CrearEstudianteComponent {
       console.log("PARAMS ::: ", params);
       this.srvStudent.create(params).subscribe((s: any) => {
         console.log("RESPONSE ::: ", s);
+        if (s.estatus === true) {
+          this.ref.close();
+          this.addMessages('success', s.mensaje);
+          setTimeout(() => {
+            this.clearMessages();
+          }, 4000);
+        } else {
+          this.addMessages('warn', 'La solicitud no se proceso correctamente.');
+          setTimeout(() => {
+            this.clearMessages();
+          }, 4000);
+        }
       });
     }
   }
@@ -80,6 +92,8 @@ export class CrearEstudianteComponent {
         setTimeout(() => {
           this.clearMessages();
         }, 4000);
+
+        return false;
       }
     }
 
