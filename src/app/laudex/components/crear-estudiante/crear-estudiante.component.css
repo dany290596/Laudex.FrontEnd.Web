@@ -1,0 +1,28 @@
+/* .borde {
+    border: 1px solid #000000;
+} */
+
+.foto {
+    z-index: 1;
+}
+
+.text {
+    word-break: break-all;
+}
+
+.fondo2 {
+    height: 200px;
+    z-index: 4;
+}
+
+#portada {
+    background-color: #2196F3;
+}
+
+.img-nm {
+    z-index: 6;
+}
+
+.opciones {
+    margin-top: 150px;
+}

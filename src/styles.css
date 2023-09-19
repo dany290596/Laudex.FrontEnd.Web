@@ -1,0 +1,171 @@
+@import "primeicons/primeicons.css";
+
+/* You can add global styles to this file, and also import other style files */
+.fondoruta {
+    background-color: #F4F6F9;
+    overflow-y: hidden;
+}
+
+.manita {
+    cursor: pointer;
+}
+
+.ui-accordion .ui-accordion-content {
+    background: #FFFFFF !important;
+}
+
+.fuenteIconos {
+    font-size: 30px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.color-titulo {
+    color: #186DDE;
+}
+
+.color-titulo2 {
+    color: #1d2228;
+}
+
+.colores {
+    color: red;
+}
+
+.tamano-iconos {
+    font-size: 25px;
+}
+
+.fondo {
+    background-color: #ffff;
+    border-radius: 5px;
+}
+
+.lstick {
+    width: 4px;
+    background: #186dde;
+    height: 30px;
+    margin-left: -20px;
+    margin-right: 15px;
+}
+
+.lstick2 {
+    width: 3px;
+    background: #186dde;
+    height: 40px;
+    margin-left: -15px;
+    margin-right: 18px;
+}
+
+.lstick3 {
+    width: 3px;
+    background: #186dde;
+    height: 40px;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.spiner {
+    margin-top: 10%;
+    margin-left: 40%;
+    width: 80px;
+    height: 80px;
+    color: #3676DF;
+    position: absolute;
+    z-index: 99;
+}
+
+.inputss {
+    width: 100%;
+}
+
+i.color-activar:hover {
+    color: #0ACC95;
+}
+
+i.color-inactivar:hover {
+    color: #EF5350;
+}
+
+i.color-normal:hover {
+    color: #3676DF;
+}
+
+.tabla-fake {
+    z-index: 1;
+}
+
+.botones {
+    color: #ffff;
+    background-color: #186DDE;
+    border-color: #186DDE;
+    width: 131px;
+}
+
+.botones2 {
+    color: #ffff;
+    background-color: #186DDE;
+    border-color: #186DDE;
+    width: 131px;
+}
+
+button.botones:hover {
+    color: #ffff;
+    background-color: #135dd3;
+    border-color: #135dd3;
+}
+
+button.botones2:hover {
+    color: #ffff;
+    background-color: #135dd3;
+    border-color: #135dd3;
+}
+
+.fondo-detalle {
+    background-color: #fefeff;
+}
+
+.combo {
+    width: 100%;
+}
+
+.p-card .p-card-content {
+    padding-top: none;
+    padding-right: none;
+    padding-bottom: none;
+    padding-left: 0px;
+}
+
+.fondo-cards {
+    background-color: #F4F6F9;
+}
+
+:host ::ng-deep .custom-toast .ui-toast-message {
+    width: 90%;
+    background: #FFD07B;
+}
+
+@media(max-width:1000px) {}
+
+@media(max-width:600px) {
+    .botones {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}
